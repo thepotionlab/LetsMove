@@ -1,9 +1,6 @@
 language: objective-c
 osx_image: xcode10
-xcode_scheme:
-  - LetsMove
-  - LetsMove Test
-xcode_project: LetsMove.xcodeproj
+script: xcodebuild build -alltargets
 branches:
   only:
   - master
