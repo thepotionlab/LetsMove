@@ -1,5 +1,8 @@
 language: objective-c
 osx_image: xcode10
+xcode_scheme:
+- LetsMove
+- LetsMove Test
 branches:
   only:
     - master
