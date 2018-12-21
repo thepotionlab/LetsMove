@@ -1,0 +1,18 @@
+language: objective-c
+osx_image: xcode10
+script: xcodebuild build -alltargets
+branches:
+  only:
+  - master
+  - "/^\\d+\\.\\d+\\.\\d+$/"
+before_deploy:
+  - carthage build --no-skip-current
+  - carthage archive LetsMove
+deploy:
+  provider: releases
+  api_key:
+    secure: DKOcEYDSdbbzVLyr8LrSc0elGK+3b0/B+A17h6UvpfKrfJ1R9/E4IyMxT+N/liz332Kg6E9XSIToUfQmmz4g/ny+a9O53Yp6Ih29fT7ySkP/dhu2JEfet3kBwpByoj/Qdc8YqsB4kUGqfzBUIdrmuEYNgFwEPt/SI5KzMp19mpzKrMtwQS8Eizk+9XaWT5aNKcbpL7bi01u2fTtMtm9vdDft2D7IN2BR7C0G2nUazTCOH8Ma8SC2UT1+VD21fVcUxMv85F/+vLSW9CTFaFBUeWUL2zhMiJW9GUXnGuut5GetQPJrGnAoEh0oE1aZXULez8Mzm9avwMjanGegMGiqlMUnI1dW6OypXebe9E5fhXhric+zT7RM5tXj3AC6emXH8H0yxZlDYz7PwAW/PxU1lYyVPFvPyNCXb6i8k7cMnuoftzkwKzetwyJwQopX4VoPz/bOIi5BF0W6k2vgbwnS+Bm5kL1hoUdrCZSaAQVpU6yjyu1Z8Gt+SMTDpvaNZjTNn+hipP/TPzjEHCTQg4cmOtRXwlcWDaZ1OLQf7x20H8Z0/sezMkXTohUjXYFaGPfp9tLJQ0vePDqbPInO39yV2K4u77YfVOf7rR88ryu57ipvgO4jIedKCKmi5eCg1Luq1MOmFbewhCdJtjq6GW+Y3WLJSxD/q5liorkGzg7NUTY=
+  file: LetsMove.framework.zip
+  on:
+    repo: thepotionlab/LetsMove
+    tags: true
