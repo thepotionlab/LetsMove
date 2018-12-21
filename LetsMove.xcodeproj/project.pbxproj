@@ -364,6 +364,7 @@
 				GCC_PREFIX_HEADER = LetsMove_Prefix.pch;
 				INFOPLIST_FILE = "LetsMove-Test-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.potionfactory.LetsMove-Test";
 				PRODUCT_NAME = "LetsMove Test";
 			};
@@ -380,6 +381,7 @@
 				GCC_PREFIX_HEADER = LetsMove_Prefix.pch;
 				INFOPLIST_FILE = "LetsMove-Test-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.potionfactory.LetsMove-Test";
 				PRODUCT_NAME = "LetsMove Test";
 			};
